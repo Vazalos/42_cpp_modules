@@ -3,25 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: david-fe <david-fe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 15:03:23 by david-fe          #+#    #+#             */
-/*   Updated: 2026/01/05 16:24:55 by dcaetano         ###   ########.fr       */
+/*   Created: 2025/12/17 14:37:32 by david-fe          #+#    #+#             */
+/*   Updated: 2025/12/17 16:14:18 by david-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-int	main(void)
+int main( void )
 {
-	Zombie*		theHorde;
-	int			zombieNum = 5;
-	std::string ZombieNames = "Artur";
-
-	theHorde = zombieHorde(zombieNum, ZombieNames);
-	for (int i = 0; i < zombieNum; i++)
-	{
-		theHorde[i].announce();
-	}
-	delete[] theHorde;
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
+    return 0;
 }
+

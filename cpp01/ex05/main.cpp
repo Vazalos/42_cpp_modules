@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: david-fe <david-fe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 15:11:14 by david-fe          #+#    #+#             */
-/*   Updated: 2025/10/30 16:07:20 by david-fe         ###   ########.fr       */
+/*   Created: 2025/11/05 14:35:42 by david-fe          #+#    #+#             */
+/*   Updated: 2026/01/06 10:46:32 by david-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-Zombie* zombieHorde(int N, std::string name)
+int main(int argc, char **argv)
 {
-	Zombie* zombiePtr = new Zombie[N];
-	for(int i = 0; i < N; i++)
-		zombiePtr[i].setName(name);
-	return(zombiePtr);
+    Harl harl;
+    std::string complaint;
+    
+    if (argc == 2)
+    {
+        complaint = argv[1];
+        harl.complain(complaint);
+    }   
+    else
+    {
+        harl.complain("DEBUG");   
+        harl.complain("INFO");   
+        harl.complain("WARNING");
+        harl.complain("ERROR");
+        harl.complain("something else");
+    }
+    return (0);
 }

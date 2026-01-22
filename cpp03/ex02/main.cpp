@@ -3,25 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: david-fe <david-fe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 15:03:23 by david-fe          #+#    #+#             */
-/*   Updated: 2026/01/05 16:24:55 by dcaetano         ###   ########.fr       */
+/*   Created: 2026/01/06 16:34:05 by david-fe          #+#    #+#             */
+/*   Updated: 2026/01/06 16:52:47 by david-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "FragTrap.hpp"
 
-int	main(void)
+int main()
 {
-	Zombie*		theHorde;
-	int			zombieNum = 5;
-	std::string ZombieNames = "Artur";
+    FragTrap A("Don");
+    FragTrap B("Zip");
+    std::cout << '\n';
+    
+    A.attack("political instability in South Sudan");
+    A.takeDamage(7);
+    A.beRepaired(40);
+    std::cout << '\n';
+    
+    FragTrap C ( A );
+    C = B;
+    std::cout << '\n';
 
-	theHorde = zombieHorde(zombieNum, ZombieNames);
-	for (int i = 0; i < zombieNum; i++)
-	{
-		theHorde[i].announce();
-	}
-	delete[] theHorde;
+    A.highFivesGuys();
+    B.highFivesGuys();
+    C.highFivesGuys();
+    std::cout << '\n';
+    
+    return(0);
 }

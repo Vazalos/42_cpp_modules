@@ -6,7 +6,7 @@
 /*   By: david-fe <david-fe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 15:04:49 by david-fe          #+#    #+#             */
-/*   Updated: 2025/10/30 14:31:19 by david-fe         ###   ########.fr       */
+/*   Updated: 2026/01/03 11:50:21 by david-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,19 @@ void PhoneBook::printColumnList(void)
 	for(int i = 0; i <= filledIndex; i++)
 	{
 		std::cout << std::setw(10) << contactList[i].index << '|';
-		std::cout << std::setw(10) << truncateStr(contactList[i].firstName) << '|';
-		std::cout << std::setw(10) << truncateStr(contactList[i].lastName) << '|';
-		std::cout << std::setw(10) << truncateStr(contactList[i].nickName) << '\n';
+		std::cout << std::setw(10) << truncateStr(contactList[i].getFirstName()) << '|';
+		std::cout << std::setw(10) << truncateStr(contactList[i].getLastName()) << '|';
+		std::cout << std::setw(10) << truncateStr(contactList[i].getNickName()) << '\n';
 	}	
 }
 
 void PhoneBook::printContact(int index)
 {	
-	std::cout << contactList[index].firstName << '\n';
-	std::cout << contactList[index].lastName << '\n';
-	std::cout << contactList[index].nickName << '\n';
-	std::cout << contactList[index].phoneNum << '\n';
-	std::cout << contactList[index].darkSecret << '\n';
+	std::cout << contactList[index].getFirstName() << '\n';
+	std::cout << contactList[index].getLastName() << '\n';
+	std::cout << contactList[index].getNickName() << '\n';
+	std::cout << contactList[index].getPhoneNum() << '\n';
+	std::cout << contactList[index].getDarkSecret() << '\n';
 }
 
 void PhoneBook::searchContact(void)
@@ -81,11 +81,17 @@ void PhoneBook::searchContact(void)
 	{
 		while(true)
 		{
-			std::cout << "Provide an index to search in contacts [0 - 7]" << '\n';
+			std::cout << "Provide an index to search in contacts [0 - " << filledIndex
+				<< "]" << '\n';
+			std::cout << "Index "; 	
 			std::getline(std::cin, strIndex);
 			if(std::cin.eof())
 				std::exit(1);
-			searchIndex = std::atoi(strIndex.c_str());
+			
+			if (strIndex.c_str()[0] >= '0' && strIndex.c_str()[0] <= '7')
+				searchIndex = std::atoi(strIndex.c_str());
+			else
+				searchIndex = -1;
 			if (searchIndex >= 0 && searchIndex <= 7)
 			{
 				if (searchIndex <= filledIndex)
@@ -98,7 +104,7 @@ void PhoneBook::searchContact(void)
 					<< filledIndex << "]" << '\n';
 			}
 			else
-				std::cout << "Contact index " << searchIndex << " has invalid value" << '\n';
+				std::cout << "Contact index has invalid value" << '\n';
 		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: david-fe <david-fe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:01:07 by david-fe          #+#    #+#             */
-/*   Updated: 2025/10/30 11:54:27 by david-fe         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:30:50 by david-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void contactInfoPrompt(std::string toPrint, std::string& varRef)
 	while (true)
 	{
 		std::cout << "Please provide your " << toPrint << '\n';
-		std::getline(std::cin, varRef);
+		std::getline(std::cin, varRef);			
 		if (std::cin.eof())
 			std::exit(1);
 		if (varRef.empty() || !hasContent(varRef))
@@ -50,3 +50,33 @@ Contact::Contact(int nextIndex)
 }
 
 Contact::~Contact(void){}
+
+int Contact::getIndex()
+{
+	return(index);
+}
+
+const std::string& Contact::getFirstName()
+{
+	return(firstName);
+}
+
+const std::string& Contact::getLastName()
+{
+	return(lastName);
+}
+
+const std::string& Contact::getNickName()
+{
+	return(nickName);
+}
+
+const std::string& Contact::getPhoneNum()
+{
+	return(phoneNum);
+}
+
+const std::string& Contact::getDarkSecret()
+{
+	return(darkSecret);
+}

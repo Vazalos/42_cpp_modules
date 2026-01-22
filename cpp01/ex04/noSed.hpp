@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   noSed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 15:03:23 by david-fe          #+#    #+#             */
-/*   Updated: 2026/01/05 16:24:55 by dcaetano         ###   ########.fr       */
+/*   Created: 2025/11/04 14:19:40 by david-fe          #+#    #+#             */
+/*   Updated: 2026/01/05 16:47:36 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-
-int	main(void)
-{
-	Zombie*		theHorde;
-	int			zombieNum = 5;
-	std::string ZombieNames = "Artur";
-
-	theHorde = zombieHorde(zombieNum, ZombieNames);
-	for (int i = 0; i < zombieNum; i++)
-	{
-		theHorde[i].announce();
-	}
-	delete[] theHorde;
-}
+#ifndef NOSED_HPP
+# define NOSED_HPP
+# include <iostream>
+# include <fstream>
+# include <cstdlib>
+# include <string>
+# include <cstring>
+#endif

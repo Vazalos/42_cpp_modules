@@ -5,23 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 15:03:23 by david-fe          #+#    #+#             */
-/*   Updated: 2026/01/05 16:24:55 by dcaetano         ###   ########.fr       */
+/*   Created: 2025/11/05 14:35:42 by david-fe          #+#    #+#             */
+/*   Updated: 2026/01/05 17:04:52 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Harl.hpp"
 
-int	main(void)
+int main(int argc, char **argv)
 {
-	Zombie*		theHorde;
-	int			zombieNum = 5;
-	std::string ZombieNames = "Artur";
+    Harl harl;
 
-	theHorde = zombieHorde(zombieNum, ZombieNames);
-	for (int i = 0; i < zombieNum; i++)
-	{
-		theHorde[i].announce();
-	}
-	delete[] theHorde;
+    if (argc == 2)
+    {
+        harl.complain(std::string(argv[1]));
+    }
+    return (0);
 }

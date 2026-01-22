@@ -6,7 +6,7 @@
 /*   By: david-fe <david-fe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:01:51 by david-fe          #+#    #+#             */
-/*   Updated: 2025/10/29 13:51:31 by david-fe         ###   ########.fr       */
+/*   Updated: 2026/01/03 15:29:48 by david-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,15 @@ class Contact
 		Contact (void);
 		Contact (int index);
 		~Contact (void);
-		int			index;
+		int Contact::getIndex()
+		const std::string& getFirstName();
+		const std::string& getLastName();
+		const std::string& getNickName();
+		const std::string& getPhoneNum();
+		const std::string& getDarkSecret();
+		
+	private:
+		int	index;
 		std::string	firstName;
 		std::string	lastName;
 		std::string	nickName;

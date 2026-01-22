@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dcaetano <dcaetano@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/30 15:03:23 by david-fe          #+#    #+#             */
-/*   Updated: 2026/01/05 16:24:55 by dcaetano         ###   ########.fr       */
+/*   Created: 2025/11/05 14:34:44 by david-fe          #+#    #+#             */
+/*   Updated: 2026/01/05 17:09:54 by dcaetano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
+# include <iostream>
 
-int	main(void)
+class Harl
 {
-	Zombie*		theHorde;
-	int			zombieNum = 5;
-	std::string ZombieNames = "Artur";
+private:
+    void debug (void);
+    void info (void);
+    void warning (void);
+    void error (void);
+public:
+    Harl();
+    ~Harl();
+    void complain (std::string level);
+};
 
-	theHorde = zombieHorde(zombieNum, ZombieNames);
-	for (int i = 0; i < zombieNum; i++)
-	{
-		theHorde[i].announce();
-	}
-	delete[] theHorde;
-}
+typedef enum
+{
+    DEBUG,
+    INFO,
+    WARNING,
+    ERROR,
+	NONE
+}   harlLevel;
+
+typedef void (Harl::*HarlFn)(void);
+
+#endif
