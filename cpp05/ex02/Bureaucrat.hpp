@@ -2,6 +2,7 @@
 #define BUREAUCRAT_HPP
 
 #include <iostream>
+#include "AForm.hpp" 
 
 class Bureaucrat
 {
@@ -16,7 +17,6 @@ class Bureaucrat
     };
 
     public:
-        Bureaucrat();
         Bureaucrat(const std::string, int);
         Bureaucrat(const Bureaucrat&);
         Bureaucrat& operator=(const Bureaucrat&);
@@ -26,12 +26,12 @@ class Bureaucrat
         void setGrade(int);
         void incrementGrade();
         void decrementGrade();
+        void signAForm(AForm&);
 
     private:
+        Bureaucrat();
         const std::string   name;
-        int        grade; //instantiate w/ an invalid grade = throw exception
-        //class
-
+        int        grade; 
 };
 
 std::ostream& operator<<(std::ostream&, const Bureaucrat&);

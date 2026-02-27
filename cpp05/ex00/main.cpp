@@ -6,7 +6,7 @@
 /*   By: david-fe <david-fe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/21 15:08:12 by david-fe          #+#    #+#             */
-/*   Updated: 2026/01/22 15:30:35 by david-fe         ###   ########.fr       */
+/*   Updated: 2026/02/25 13:31:37 by david-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,66 @@
 
 int main()
 {
-    Bureaucrat A("Janet", 80);
-    std::cout << A << '\n';
-    Bureaucrat B("Connor", 100);
-    std::cout << B << '\n';
-    Bureaucrat C = B;
-    std::cout << C << '\n';
-    A = C;
+    std::cout << '\n' << "Valid Test" << '\n';
+    try
+    {
+        Bureaucrat A("Ariel", 9);
+        std::cout << A << '\n';
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    std::cout << '\n' << "Invalid Test" << '\n';
+    try
+    {
+        Bureaucrat B("Bill", 151);
+        std::cout << B << '\n';
+    }
+    catch(const std::exception& f)
+    {
+        std::cerr << f.what() << '\n';
+    }
 
-    for (int i = 0; i < 10; i++)
-        A.incrementGrade();    
-
-    std::cout << A << '\n';
-    std::cout << B << '\n';
+    std::cout << '\n' << "Grade Change Exception Test" << '\n';
+    Bureaucrat C("Connor", 2);
+    Bureaucrat D;
+    std::cout << '\n';
+    try
+    {
+        std::cout << C << '\n';
+        C.incrementGrade();
+        std::cout << C << '\n';
+        C.incrementGrade();
+        std::cout << C << '\n';
+    }
+    catch(const std::exception& g)
+    {
+        std::cerr << g.what() << '\n';
+    }
     std::cout << C << '\n';
+
+    std::cout << '\n' << "= Operator Test" << '\n';
+    try
+    {
+        std::cout << D << '\n';
+        D = C;
+        std::cout << D << '\n';
+    }
+    catch(const std::exception& h)
+    {
+        std::cerr << h.what() << '\n';
+    }
+
+    std::cout << '\n' << "Grade Set Test" << '\n';
+    try
+    {
+        D.setGrade(50);
+        std::cout << D << '\n';
+    }
+    catch(const std::exception& h)
+    {
+        std::cerr << h.what() << '\n';
+    }
 }

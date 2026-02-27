@@ -6,11 +6,12 @@
 /*   By: david-fe <david-fe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 13:00:21 by david-fe          #+#    #+#             */
-/*   Updated: 2026/02/25 14:27:15 by david-fe         ###   ########.fr       */
+/*   Updated: 2026/02/26 14:12:19 by david-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat() : name("John Smith"), grade(150)
 {
@@ -81,8 +82,21 @@ void Bureaucrat::decrementGrade()
     setGrade(grade + 1);
 }
 
+void Bureaucrat::signForm(Form& toSign)
+{
+    try
+    {
+        toSign.beSigned(*this);
+        std::cout << this->name << " signed " << toSign.getName() << "\n";
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << this->name << " couldn’t sign " << toSign.getName() << " because " << e.what() <<'\n';
+    }
+}
+
 std::ostream& operator<<(std::ostream& stream, const Bureaucrat& other)
 {
-    stream << other.getName() << ", bureaucrat grade " << other.getGrade() << '\n';
+    stream << other.getName() << ", bureaucrat grade " << other.getGrade();
     return(stream);
 }
