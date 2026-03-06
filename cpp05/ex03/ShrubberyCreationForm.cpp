@@ -29,6 +29,6 @@ void ShrubberyCreationForm::beExecuted(void) const
 	    << "  -˙   ˙-\n"
 	    << " -˙ ___ ˙-\n"
 	    << "-˙--| |--˙-\n"
-	    << "    | |\n";
+	    << "    |_|\n";
 	f.close();
 }

@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: david-fe <david-fe@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/21 15:02:11 by david-fe          #+#    #+#              #
-#    Updated: 2026/03/03 11:32:37 by david-fe         ###   ########.fr        #
+#    Created: 2026/03/04 10:45:51 by david-fe          #+#    #+#              #
+#    Updated: 2026/03/04 15:27:59 by david-fe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ CXX = c++
 RM = rm -rf
 CXXFLAGS = -Wall -Wextra -Wextra -std=c++98
 
-NAME = AForm
-SRC = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+NAME = ScalarConverter
+SRC = ScalarConverter.cpp main.cpp
 OBJ_PATH = .obj
 OBJ = $(addprefix $(OBJ_PATH)/, $(SRC:.cpp=.o))
 
