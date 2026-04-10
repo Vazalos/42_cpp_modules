@@ -6,12 +6,13 @@
 /*   By: david-fe <david-fe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 16:14:24 by david-fe          #+#    #+#             */
-/*   Updated: 2026/03/12 11:36:14 by david-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 10:51:04 by david-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 #include <iostream>
+#include <ctime>
 
 int main()
 {
@@ -24,7 +25,7 @@ int main()
         sp.addNumber(17);
         sp.addNumber(9);
         sp.addNumber(11);
-        sp.addNumber(99);
+        sp.addNumber(99); // added this line, throws exception
     }
     catch(const std::exception& e)
     {
@@ -40,9 +41,9 @@ int main()
     Span big(size);
     std::vector<int> source;
     
-    for (unsigned int i = 0; i < size + 1; i++)
+    for (unsigned int i = 0; i < size + 1; i++) // pos size + 1 throws exception
     {
-        source.push_back(rand() % 10001);
+        source.push_back(rand() % (size + 1));
         std::cout << source[i] << " ";
     }
     
@@ -59,7 +60,7 @@ int main()
     std::cout << big.shortestSpan() << std::endl;
     std::cout << big.longestSpan() << std::endl;
 
-    std::cout << "Additional Test #2\n";
+    std::cout << "\nAdditional Test #2\n\n";
 
     Span small(3);
     
@@ -86,8 +87,11 @@ int main()
     small.addNumber(5); 
     std::cout << small.longestSpan() << std::endl;
     std::cout << small.shortestSpan() << std::endl;
-    int randN = rand() % 5;
+    
+    std::srand(static_cast<unsigned int>(std::time(NULL)));
+    int randN = rand() % 5; // add a random number, check longest span
     std::cout << "adding " << randN << '\n';
+    
     small.addNumber(randN);
     std::cout << small.longestSpan() << std::endl;
 }

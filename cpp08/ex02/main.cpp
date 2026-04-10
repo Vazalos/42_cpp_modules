@@ -6,7 +6,7 @@
 /*   By: david-fe <david-fe@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 12:01:59 by david-fe          #+#    #+#             */
-/*   Updated: 2026/03/12 14:25:29 by david-fe         ###   ########.fr       */
+/*   Updated: 2026/03/24 10:53:04 by david-fe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 int main()
 {
+    std::cout << "Original tests\n\n";
+    
     MutantStack<int> mstack;
     mstack.push(5);
     mstack.push(17);
@@ -38,7 +40,7 @@ int main()
     }
     std::stack<int> s(mstack); //MutantStack recognized as a valid stack through proper inheritance;
 
-    std::cout << "\nSame tests using std::list\n";
+    std::cout << "\nSame tests using std::list\n\n";
 
     std::list<int> list;
     list.push_back(5);
