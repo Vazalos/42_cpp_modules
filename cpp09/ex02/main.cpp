@@ -13,7 +13,10 @@ int main(int argc, char **argv ){
         std::cerr << "Error" << "\n";
         return(1);
     }
-    sorter.sortVector();
+    
+    double vectTime = sorter.sortVector(); // IS THIS VALUE ACCURATE?
+    double deqTime = 0; // = sorter.sortDeque();
+    sorter.printResult(vectTime, deqTime);
 
     return(0);
 }

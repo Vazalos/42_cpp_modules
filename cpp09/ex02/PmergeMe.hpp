@@ -4,9 +4,10 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <deque>
 #include <stdlib.h>
-
-//#include list/deque
+#include <string.h>
+#include <sys/time.h>
 
 class PmergeMe
 {
@@ -15,13 +16,15 @@ class PmergeMe
         PmergeMe(const PmergeMe&);
         PmergeMe& operator=(const PmergeMe&);
         ~PmergeMe();
-        void print();
         int parseArgs(int n, char **args);
-        int sortVector();
+        double sortVector();
+        // double sortDeque();
+        void printResult(double vectTime, double deqTime);
 
     private:
+        std::vector<int> unordered;
         std::vector<int> vect_;
-        
+        // std::deque<int> deq_;
 };
 
 #endif
