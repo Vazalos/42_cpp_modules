@@ -14,8 +14,8 @@ int main(int argc, char **argv ){
         return(1);
     }
     
-    double vectTime = sorter.sortVector(); // IS THIS VALUE ACCURATE?
-    double deqTime = 0; // = sorter.sortDeque();
+    double vectTime = sorter.sortVector();
+    double deqTime = sorter.sortDeque();
     sorter.printResult(vectTime, deqTime);
 
     return(0);

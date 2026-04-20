@@ -18,13 +18,13 @@ class PmergeMe
         ~PmergeMe();
         int parseArgs(int n, char **args);
         double sortVector();
-        // double sortDeque();
+        double sortDeque();
         void printResult(double vectTime, double deqTime);
 
     private:
         std::vector<int> unordered;
         std::vector<int> vect_;
-        // std::deque<int> deq_;
+        std::deque<int> deq_;
 };
 
 #endif
